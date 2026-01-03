@@ -1,0 +1,90 @@
+/* ===========================
+   GLOBAL RESET
+=========================== */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Cambria, serif;
+  background-color: #f5f7fb;
+}
+
+/* ===========================
+   APP WRAPPER
+=========================== */
+.app-main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   CONTENT AREA (CRITICAL FIX)
+=========================== */
+.content-area {
+  flex: 1;
+  padding-top: 80px;        /* ✅ SAME AS NAVBAR HEIGHT */
+  background-color: #f5f7fb;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  margin: 0;
+  padding: 0;
+}
+/* --- GLOBAL PREMIUM LOADER --- */
+.global-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000; /* Ensure it is above Navbar and all content */
+}
+
+.spinner-rotater {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #a435f0; /* Brand Purple */
+  border-radius: 50%;
+  animation: spin-animation 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  margin-bottom: 15px;
+}
+
+.loader-message {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1d1f;
+  animation: pulse-opacity 1.5s infinite;
+}
+
+@keyframes spin-animation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Base wrapper to handle content flow */
+.app-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-area {
+  flex: 1;
+}

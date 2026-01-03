@@ -1,0 +1,161 @@
+/* CourseCatalog.css */
+
+.catalog-wrapper {
+    padding: 40px 8% 80px;
+    font-family: 'Cambria', serif;
+    background-color: #ffffff;
+}
+
+.catalog-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.catalog-hero h1 { font-size: 36px; color: #1c1d1f; }
+.catalog-hero p { font-size: 18px; color: #6a6f73; }
+
+/* CATEGORY BAR */
+.category-filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.category-pill {
+    padding: 10px 22px;
+    border: 1px solid #1c1d1f;
+    background: white;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Cambria', serif;
+}
+
+.category-pill.active {
+    background: #1c1d1f;
+    color: white;
+}
+
+.category-pill:hover:not(.active) {
+    background: #f7f9fa;
+}
+
+/* INFO ROW */
+.catalog-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #d1d7dc;
+    padding-bottom: 10px;
+}
+
+.catalog-info-row h3 { font-size: 22px; color: #1c1d1f; }
+
+/* GRID & CARDS */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.course-card-ui {
+    border: 1px solid #d1d7dc;
+    background: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card-ui:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.course-thumb img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.course-details { padding: 20px; flex-grow: 1; }
+
+.card-cat-tag {
+    font-size: 12px;
+    color: #a435f0;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.course-details h3 {
+    font-size: 18px;
+    color: #1c1d1f;
+    margin-bottom: 15px;
+    height: 44px;
+    overflow: hidden;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price-tag-ui { font-size: 20px; font-weight: 800; }
+
+.view-btn {
+    background: #a435f0;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* EMPTY STATE */
+.empty-catalog {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 100px 20px;
+    background: #f7f9fa;
+    border: 2px dashed #d1d7dc;
+}
+
+/* --- CENTERED LOADER STYLES --- */
+.catalog-loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px; /* Adjust based on your layout preference */
+    width: 100%;
+}
+
+.catalog-spinner {
+    width: 45px;
+    height: 45px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #a435f0; /* Brand purple */
+    border-radius: 50%;
+    animation: catalog-spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes catalog-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.catalog-loader-container p {
+    font-size: 18px;
+    color: #1c1d1f;
+    font-weight: 500;
+}

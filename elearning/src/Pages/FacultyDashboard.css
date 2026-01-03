@@ -1,0 +1,357 @@
+/* =====================================================
+   GLOBAL RESET & FONT
+===================================================== */
+* {
+  box-sizing: border-box;
+  font-family: Cambria, "Cambria Math", Georgia, serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f7fb;
+}
+
+/* =====================================================
+   DASHBOARD LAYOUT (KEY FIX)
+===================================================== */
+.dashboard-wrapper {
+  display: flex;
+  min-height: calc(100vh - 80px); /* navbar height */
+  width: 100%;
+  background: #f6f7fb;
+}
+
+/* =====================================================
+   SIDEBAR (FULL HEIGHT, NO SCROLL)
+===================================================== */
+.dashboard-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1c1d1f, #232426);
+  color: #ffffff;
+  padding: 26px 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  /* 🔥 CRITICAL */
+  min-height: calc(100vh - 80px);
+  position: sticky;
+  top: 80px;
+}
+
+/* Brand */
+.sidebar-brand {
+  font-size: 22px;
+  font-weight: 900;
+  color: #a435f0;
+  padding-left: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #cfd2da;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #a435f0, #8710d8);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(164, 53, 240, 0.45);
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+.dashboard-content {
+  flex: 1;
+  padding: 36px 48px;
+  max-width: 1200px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.content-header h1 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1c1d1f;
+}
+
+/* =====================================================
+   CARD DESIGN
+===================================================== */
+.admin-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 32px;
+  margin-bottom: 32px;
+  border: 1px solid #eef1f6;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.admin-card h3 {
+  font-size: 19px;
+  font-weight: 800;
+  color: #1c1d1f;
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid #d1d7dc;
+  background: #f9fafb;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #a435f0;
+  background: #ffffff;
+}
+
+.textarea-field {
+  min-height: 150px;
+  resize: none;
+}
+
+/* =====================================================
+   PREMIUM THUMBNAIL UPLOAD
+===================================================== */
+.thumbnail-upload-zone {
+  border: 2px dashed #d1d7dc;
+  border-radius: 22px;
+  padding: 36px;
+  background: linear-gradient(180deg, #ffffff, #faf5ff);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.thumbnail-upload-zone:hover {
+  border-color: #a435f0;
+  background: #faf5ff;
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 38px;
+  color: #a435f0;
+}
+
+.upload-text {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6a6f73;
+  font-weight: 600;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* =====================================================
+   CURRICULUM BUILDER
+===================================================== */
+.chapter-item {
+  border: 1px solid #edf0f6;
+  border-radius: 20px;
+  padding: 22px;
+  background: #fafbfe;
+  margin-bottom: 22px;
+}
+
+.chapter-head {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.chapter-title-input {
+  font-weight: 700;
+}
+
+.lesson-item {
+  display: grid;
+  grid-template-columns: 1.2fr 1.6fr auto;
+  gap: 12px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #eef1f6;
+  margin-bottom: 12px;
+}
+
+.lesson-file-row {
+  display: flex;
+  gap: 10px;
+}
+
+.mini-file-input {
+  font-size: 13px;
+  padding: 6px;
+}
+
+.mini-select {
+  font-size: 13px;
+  padding: 6px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.publish-btn-main {
+  background: linear-gradient(135deg, #a435f0, #8710d8);
+  color: #ffffff;
+  border: none;
+  padding: 15px 36px;
+  border-radius: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 12px 32px rgba(164, 53, 240, 0.45);
+  transition: 0.3s;
+}
+
+.publish-btn-main:hover {
+  transform: translateY(-3px);
+}
+
+.add-chapter-btn-top {
+  background: #f3e8ff;
+  color: #a435f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.add-lesson-btn-inline {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 2px dashed #a435f0;
+  background: transparent;
+  color: #a435f0;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Delete Buttons */
+.icon-del-btn {
+  background: #fff5f5;
+  border: 1px solid #ffdede;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.lesson-del-btn {
+  background: transparent;
+  border: none;
+  color: #e53935;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+.fade-in {
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 1024px) {
+  .dashboard-sidebar {
+    width: 80px;
+  }
+
+  .sidebar-brand {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: auto;
+  }
+
+  .dashboard-content {
+    padding: 24px;
+  }
+}
+

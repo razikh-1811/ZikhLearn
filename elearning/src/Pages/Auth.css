@@ -1,0 +1,77 @@
+.auth-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #f4f7fe; /* Matches Dashboard background */
+  padding: 40px 20px;
+}
+
+.auth-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05); /* Matches Admin cards */
+  text-align: center;
+}
+
+.auth-card h1 {
+  color: #1b2559;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.auth-card p {
+  color: #707eae;
+  margin-bottom: 24px;
+}
+
+/* Customizing Clerk internal components */
+.cl-rootBox {
+  margin: 0 auto;
+}
+
+.cl-card {
+  box-shadow: none !important;
+  border: none !important;
+}
+.role-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.role-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.role-btn:hover {
+  border-color: #4318ff;
+  background-color: #f0f4ff;
+  transform: translateY(-2px);
+}
+
+.role-icon {
+  font-size: 2.5rem;
+}
+
+.role-text strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #1b2559;
+}
+
+.role-text span {
+  font-size: 0.85rem;
+  color: #707eae;
+}

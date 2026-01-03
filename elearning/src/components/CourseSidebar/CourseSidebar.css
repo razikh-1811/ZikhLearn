@@ -1,0 +1,136 @@
+/* Sidebar Root */
+.course-sidebar-modern {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #1c1d1f; /* Matches Theater Mode */
+  color: #fff;
+  border-left: 1px solid #3e4143;
+}
+
+.sidebar-header-compact {
+  padding: 16px 20px;
+  background: #1c1d1f;
+  border-bottom: 1px solid #3e4143;
+}
+
+.sidebar-header-compact h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #efeff1;
+}
+
+.sidebar-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3e4143 transparent;
+}
+
+/* Chapter Sections */
+.chapter-block {
+  border-bottom: 1px solid #3e4143;
+}
+
+.chapter-toggle {
+  padding: 12px 20px;
+  background-color: #2d2f31;
+}
+
+.chapter-meta {
+  display: block;
+  font-size: 11px;
+  color: #949a9e;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.chapter-toggle h4 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+/* Lesson Rows */
+.lesson-stack {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lesson-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 20px;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.lesson-row:hover {
+  background-color: #3e4143;
+}
+
+.lesson-row.active-playing {
+  background-color: #3e4143;
+  border-left: 4px solid #a435f0; /* Branded Purple */
+}
+
+/* Icons and Indicators */
+.lesson-indicator {
+  font-size: 12px;
+  padding-top: 2px;
+  color: #a435f0;
+}
+
+.circle-check {
+  color: #949a9e;
+}
+
+/* Content Info */
+.lesson-content-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.l-title {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #f7f9fa;
+  margin-bottom: 4px;
+}
+
+.l-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.l-icon-type {
+  font-size: 11px;
+  color: #949a9e;
+  font-weight: 400;
+}
+
+/* Scrollbar Customization */
+.sidebar-scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scroll-area::-webkit-scrollbar-thumb {
+  background: #3e4143;
+  border-radius: 10px;
+}
+
+/* Tightness fix: ensures items don't look squashed on mobile */
+@media (max-width: 768px) {
+  .lesson-row {
+    padding: 16px 20px;
+  }
+}

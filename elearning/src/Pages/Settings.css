@@ -1,0 +1,100 @@
+/* --- Root Layout --- */
+.settings-container {
+    padding: 30px;
+    max-width: 800px;
+}
+
+.settings-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d1d7dc;
+    padding-bottom: 15px;
+}
+
+.settings-header h1 {
+    font-size: 24px;
+    color: #1c1d1f;
+    margin-bottom: 8px;
+}
+
+.settings-header p {
+    color: #6a6f73;
+    font-size: 14px;
+}
+
+/* --- Card Styling --- */
+.settings-card {
+    background: #ffffff;
+    border: 1px solid #d1d7dc;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #1c1d1f;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #2d2f31;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: #a435f0;
+}
+
+/* --- Dashboard Primary Button --- */
+.settings-footer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.update-profile-btn {
+    background-color: #a435f0; /* Signature Purple */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.update-profile-btn:hover {
+    background-color: #8710d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(164, 53, 240, 0.3);
+}
+
+.update-profile-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Utilities --- */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

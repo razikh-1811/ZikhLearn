@@ -1,0 +1,159 @@
+/* --- HERO SECTION BASE --- */
+.hero-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(60px, 10vh, 100px) 5%; /* Fluid padding */
+    background: linear-gradient(135deg, #f8f9fb 0%, #eef0f3 100%);
+    min-height: 85vh;
+    font-family: 'Inter', -apple-system, sans-serif; /* Modern fallback */
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents floating cards from causing scroll */
+}
+
+.hero-content-left {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+}
+
+/* --- RESPONSIVE TYPOGRAPHY --- */
+.hero-subtitle {
+    display: inline-block;
+    color: #a435f0;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero-content-left h1 {
+    font-size: clamp(32px, 5vw, 56px); /* Fluid sizing */
+    line-height: 1.1;
+    color: #1c1d1f;
+    margin-bottom: 20px;
+}
+
+.hero-content-left p {
+    font-size: clamp(16px, 2vw, 19px);
+    color: #6a6f73;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.hero-btn-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to stack on very small screens */
+    gap: 15px;
+}
+
+.hero-btn-primary, .hero-btn-outline {
+    padding: 16px 32px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 160px;
+}
+
+.hero-btn-primary {
+    background-color: #a435f0;
+    color: white;
+    border: none;
+}
+
+.hero-btn-primary:hover {
+    background-color: #8710d8;
+    transform: translateY(-2px);
+}
+
+.hero-btn-outline {
+    background-color: transparent;
+    color: #1c1d1f;
+    border: 1px solid #1c1d1f;
+}
+
+.hero-btn-outline:hover {
+    background-color: rgba(28, 29, 31, 0.04);
+}
+
+/* --- RIGHT VISUAL (RESPONSIVE FIX) --- */
+.hero-visual-right {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Instead of fixed 450px */
+    aspect-ratio: 4 / 3; /* Maintains shape naturally */
+    background: #d1d7dc; 
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    margin-left: 40px;
+}
+
+.floating-stat-card {
+    position: absolute;
+    bottom: -15px;
+    left: -20px;
+    background: white;
+    padding: clamp(15px, 3vw, 25px);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 3;
+}
+
+.floating-stat-card strong {
+    display: block;
+    font-size: clamp(18px, 3vw, 28px);
+    color: #a435f0;
+}
+
+/* --- MOBILE & TABLET RESPONSIVENESS --- */
+
+@media (max-width: 1024px) {
+    .hero-block {
+        flex-direction: column; /* Stack layout */
+        text-align: center;
+        padding-top: 120px; /* Space for fixed navbar */
+    }
+
+    .hero-content-left {
+        max-width: 100%;
+        margin-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-visual-right {
+        margin-left: 0; /* Center the image */
+        max-width: 400px;
+    }
+    
+    .hero-btn-group {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-block {
+        padding: 100px 20px 60px;
+    }
+
+    .hero-btn-group {
+        flex-direction: column; /* Buttons take full width */
+        width: 100%;
+    }
+
+    .hero-btn-primary, .hero-btn-outline {
+        width: 100%;
+    }
+
+    .floating-stat-card {
+        left: 50%;
+        transform: translateX(-50%); /* Center the stat card on mobile */
+        width: 80%;
+    }
+}

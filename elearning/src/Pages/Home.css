@@ -1,0 +1,89 @@
+/* --- GLOBAL HOME WRAPPER --- */
+.home-page-viewport-wrapper {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden; /* CRITICAL: Prevents horizontal scroll breaking the Navbar */
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* --- HERO SECTION REFINEMENT --- */
+.hero-banner {
+  width: 100%;
+  min-height: clamp(380px, 70vh, 550px);
+  background-image: linear-gradient(to right, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0.2)), 
+                    url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(1rem, 5vw, 5rem);
+  box-sizing: border-box; /* Ensures padding doesn't push width */
+}
+
+/* --- BOTTOM CTA (Fluid & Centered) --- */
+.bottom-cta-section {
+  padding: clamp(3.5rem, 10vw, 7rem) 1rem;
+  background-color: #f7f9fa;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cta-content-limit {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bottom-cta-section h2 {
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  color: #1c1d1f;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.bottom-cta-section p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #6a6f73;
+  margin-bottom: 2rem;
+}
+
+/* --- BUTTON REFINEMENT --- */
+.hero-btn-primary {
+  background-color: #a435f0;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  width: fit-content;
+}
+
+.hero-btn-primary:hover {
+  background-color: #8710d8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(164, 53, 240, 0.25);
+}
+
+/* --- MOBILE BREAKPOINTS --- */
+
+@media (max-width: 768px) {
+  .hero-banner {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.95) 60%, rgba(255,255,255,0.5)), 
+                      url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2070');
+    padding: 3rem 1.5rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-btn-primary {
+    width: 100%; /* Easy thumb-tap on mobile */
+  }
+
+  .bottom-cta-section {
+    padding: 3rem 1.5rem;
+  }
+}

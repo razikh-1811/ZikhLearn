@@ -1,0 +1,172 @@
+/* ================= ROOT ================= */
+.admin-analytics-page {
+  padding: 40px;
+  background: #f6f7fb;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.admin-analytics-page h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #1c1d1f;
+}
+
+/* ================= LOADING / ERROR ================= */
+.admin-loading,
+.admin-error {
+  padding: 80px;
+  text-align: center;
+
+  font-size: 18px;
+  color: #555;
+}
+
+.admin-error {
+  color: #d32f2f;
+}
+
+/* ================= STATS GRID ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+/* ================= STAT CARD ================= */
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 6px solid #a435f0;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6a6f73;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-card p {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1c1d1f;
+}
+
+/* Highlight Revenue */
+.stat-card.revenue {
+  border-left-color: #2e7d32;
+  background: linear-gradient(135deg, #ffffff, #f0fff4);
+}
+
+.stat-card.revenue p {
+  color: #2e7d32;
+}
+
+/* ================= COURSE REVENUE TABLE ================= */
+.top-courses {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1);
+}
+
+.top-courses h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #1c1d1f;
+}
+
+/* ================= TABLE ================= */
+.top-courses table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.top-courses thead {
+  background: #f7f9fa;
+}
+
+.top-courses th,
+.top-courses td {
+  padding: 14px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.top-courses th {
+  font-weight: 700;
+  color: #1c1d1f;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.top-courses td {
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+/* Numeric alignment */
+.top-courses td:nth-child(3),
+.top-courses td:nth-child(4),
+.top-courses th:nth-child(3),
+.top-courses th:nth-child(4) {
+  text-align: right;
+}
+
+/* Revenue emphasis */
+.top-courses td:last-child {
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.top-courses tbody tr:hover {
+  background: #faf6ff;
+}
+
+/* ================= EMPTY STATE ================= */
+.no-data {
+  padding: 30px;
+  text-align: center;
+  font-size: 15px;
+  color: #6a6f73;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .admin-analytics-page {
+    padding: 20px;
+  }
+
+  .stats-grid {
+    gap: 16px;
+  }
+
+  .stat-card p {
+    font-size: 26px;
+  }
+
+  .top-courses {
+    padding: 20px;
+  }
+
+  .top-courses table {
+    font-size: 14px;
+  }
+
+  /* Scrollable table on mobile */
+  .top-courses {
+    overflow-x: auto;
+  }
+}

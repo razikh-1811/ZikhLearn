@@ -1,0 +1,56 @@
+.video-player-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  justify-content: center;
+  position: relative;
+}
+
+.video-element {
+  width: 100%;
+  max-height: 100%;
+  outline: none;
+  background-color: #000;
+}
+
+.video-meta {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 4px;
+  pointer-events: none; /* Allows clicks to pass through to video controls */
+  transition: opacity 0.3s;
+  opacity: 0; /* Hidden by default, shows on hover */
+}
+
+.video-player-container:hover .video-meta {
+  opacity: 1;
+}
+
+.now-playing-tag {
+  color: #a435f0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.video-meta h2 {
+  color: #fff;
+  font-size: 16px;
+  margin: 5px 0 0;
+}
+
+.video-error {
+  color: #fff;
+  background: #1c1d1f;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}

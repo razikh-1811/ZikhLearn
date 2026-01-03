@@ -1,0 +1,25 @@
+.footer {
+  background: #1c1d1f;
+  color: white;
+  padding: 40px 2rem;
+
+  /* 🔥 FIX: remove gap */
+  margin-top: 1px;
+
+  /* safe defaults */
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #a435f0;
+  margin-bottom: 10px;
+}
+
+.footer-top p {
+  font-size: 12px;
+  color: #6a6f73;
+}

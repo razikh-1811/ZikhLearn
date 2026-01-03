@@ -1,0 +1,109 @@
+/* ===== PAGE WRAPPER ===== */
+.role-container {
+  min-height: calc(100vh - 80px); /* respects fixed navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f7f9fa, #eef1f5);
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== CARD ===== */
+.role-card {
+  background: white;
+  padding: 40px 36px;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  text-align: center;
+  animation: fadeUp 0.4s ease;
+}
+
+.role-card h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #1c1d1f;
+}
+
+.role-card p {
+  font-size: 15px;
+  color: #6a6f73;
+  margin-bottom: 28px;
+}
+
+/* ===== OPTIONS ===== */
+.role-options {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ===== BUTTONS ===== */
+.role-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+/* STUDENT */
+.role-btn.student {
+  background: #2e7d32;
+  color: white;
+}
+
+.role-btn.student:hover {
+  background: #1e5c24;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+}
+
+/* FACULTY */
+.role-btn.faculty {
+  background: #a435f0;
+  color: white;
+}
+
+.role-btn.faculty:hover {
+  background: #7f2cc1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(164, 53, 240, 0.35);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .role-card {
+    padding: 32px 24px;
+  }
+
+  .role-card h2 {
+    font-size: 22px;
+  }
+
+  .role-btn {
+    font-size: 15px;
+    padding: 14px;
+  }
+}

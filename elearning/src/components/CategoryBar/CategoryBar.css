@@ -1,0 +1,37 @@
+.category-bar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #d1d7dc;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.category-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.category-btn {
+  background: none;
+  border: none;
+  font-family: Cambria, serif;
+  font-size: 16px;
+  color: #6a6f73;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+  color: #a435f0;
+}
+
+.category-btn.active {
+  color: #a435f0;
+  border-bottom: 2px solid #a435f0;
+  font-weight: bold;
+}

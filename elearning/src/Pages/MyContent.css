@@ -1,0 +1,123 @@
+.my-content-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    border-bottom: 1px solid #d1d7dc;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    color: #1c1d1f;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #6a6f73;
+}
+
+/* Horizontal card style for better list viewing */
+.course-card-horizontal {
+    display: flex;
+    background: white;
+    border: 1px solid #d1d7dc;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.course-card-horizontal:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.course-card-img {
+    width: 200px;
+    height: 120px;
+}
+
+.course-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.course-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c1d1f;
+}
+
+.price-badge {
+    background: #f3e5f5;
+    color: #a435f0;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.chapter-count {
+    color: #6a6f73;
+    font-size: 14px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.manage-btn {
+    background: #1c1d1f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.del-btn-text {
+    background: none;
+    border: none;
+    color: #b32d0f;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 0;
+    background: #f7f9fa;
+    border: 2px dashed #d1d7dc;
+}
+
+.empty-icon { font-size: 50px; margin-bottom: 15px; }
+
+.create-now-btn {
+    background: #a435f0;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+}

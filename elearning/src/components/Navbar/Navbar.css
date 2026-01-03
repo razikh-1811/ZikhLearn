@@ -1,0 +1,197 @@
+/* ===============================
+   GLOBAL VARIABLES & RESET
+================================ */
+:root {
+  --navbar-height: 80px;
+  --brand-purple: #a435f0;
+  --dark-bg: #1c1d1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===============================
+   NAVBAR CONTAINER
+================================ */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: #ffffff;
+  border-bottom: 1px solid #d1d7dc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  gap: 16px;
+}
+
+/* ===============================
+   LEFT (LOGO SECTION)
+================================ */
+.nav-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-brand-image {
+  height: 90px; /* Optimized height for the 80px navbar */
+  width: 200px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo-link:hover .nav-brand-image {
+  transform: scale(1.03);
+}
+
+/* ===============================
+   CENTER (SEARCH)
+================================ */
+.nav-center {
+  flex: 1;
+  max-width: 520px;
+  min-width: 220px;
+  margin: 0 24px;
+}
+
+.search-box-container {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  background-color: #f7f9fa;
+  border: 1px solid var(--dark-bg);
+  border-radius: 24px;
+  padding: 0 16px;
+}
+
+.search-field {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ===============================
+   RIGHT (AUTH & USER)
+================================ */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.user-nav-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-profile-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 14px;
+  border-left: 1px solid #d1d7dc;
+}
+
+.user-text-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav-user-name {
+  font-weight: bold;
+  font-size: 13px;
+  color: var(--dark-bg);
+}
+
+.nav-role-badge {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.badge-faculty { background: var(--brand-purple); }
+.badge-student { background: #2e7d32; }
+.badge-admin { background: #d32f2f; }
+
+/* ===============================
+   LINKS & BUTTONS
+================================ */
+.nav-link {
+  text-decoration: none;
+  color: var(--brand-purple);
+  font-weight: bold;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--dark-bg);
+}
+
+.nav-auth-link {
+  font-weight: bold;
+  color: var(--dark-bg);
+  text-decoration: none;
+}
+
+.signup-button {
+  padding: 10px 20px;
+  background-color: var(--dark-bg);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.signup-button:hover {
+  background-color: #3e4143;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 1024px) {
+  .navbar-container { padding: 0 20px; }
+  .nav-center { max-width: 400px; }
+  .nav-brand-image { height: 42px; }
+}
+
+@media (max-width: 768px) {
+  .nav-center { display: none; }
+  .user-text-info { display: none; }
+  .user-profile-display { border-left: none; padding-left: 0; }
+  
+  /* ✅ ONLY CHANGE: Reduced height for mobile screens */
+  .nav-brand-image { height: 38px; width:auto; } 
+}
