@@ -12,9 +12,22 @@ const app = express();
 /* ================= MIDDLEWARE ================= */
 app.use(express.json());
 
+// This allows both your local testing and your future Netlify site
+const allowedOrigins = [
+  "http://localhost:5173", 
+  "https://your-site-name.netlify.app" // ✅ REPLACE THIS with your Netlify URL once you have it
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl) or if in allowedOrigins
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );

@@ -16,7 +16,7 @@ const CourseEditor = () => {
         const fetchCourse = async () => {
             try {
                 const token = await getToken(); // ✅ Use Clerk Token
-                const res = await axios.get(`http://localhost:5000/api/courses/${courseId}`, {
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/courses/${courseId}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setCourse(res.data);
@@ -94,7 +94,7 @@ const CourseEditor = () => {
                 });
             });
 
-            await axios.put(`http://localhost:5000/api/courses/${courseId}`, formData, {
+            await axios.put(`${import.meta.env.VITE_API_URL}/api/courses/${courseId}`, formData, {
                 headers: { 
                     Authorization: `Bearer ${token}`, 
                     'Content-Type': 'multipart/form-data' 

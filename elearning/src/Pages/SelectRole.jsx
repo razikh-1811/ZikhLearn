@@ -14,7 +14,7 @@ const SelectRole = () => {
 
       // 1. Tell our backend to update the role
       await axios.post(
-        "http://localhost:5000/api/courses/sync-role",
+        `${import.meta.env.VITE_API_URL}/api/courses/sync-role`,
         { role: selectedRole },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -31,7 +31,7 @@ const Analytics = () => {
         const token = await getToken();
 
         const res = await axios.get(
-          "http://localhost:5000/api/courses/instructor/stats",
+          `${import.meta.env.VITE_API_URL}/api/courses/instructor/stats`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

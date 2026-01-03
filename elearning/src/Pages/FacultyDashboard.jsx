@@ -100,7 +100,7 @@ const FacultyDashboard = () => {
       );
 
       await axios.post(
-        'http://localhost:5000/api/courses/upload',
+        `${import.meta.env.VITE_API_URL}/api/courses/upload`,
         formData,
         {
           headers: {

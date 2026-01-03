@@ -19,7 +19,7 @@ const AdminAnalytics = () => {
         const token = await getToken();
 
         const res = await axios.get(
-          "http://localhost:5000/api/admin/analytics", // ✅ FIXED
+          `${import.meta.env.VITE_API_URL}/api/admin/analytics`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

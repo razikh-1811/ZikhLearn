@@ -19,11 +19,11 @@ const CourseCatalog = ({ searchQuery = "" }) => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const courseRes = await axios.get('http://localhost:5000/api/courses');
+                const courseRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/courses`);
                 
                 if (user) {
                     const token = await getToken();
-                    const userRes = await axios.get('http://localhost:5000/api/users/profile-status', {
+                    const userRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/profile-status`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     const ids = userRes.data.enrolledCourses?.map(id => id.toString()) || [];
@@ -86,7 +86,7 @@ const CourseCatalog = ({ searchQuery = "" }) => {
                 {filteredCourses.map(course => (
                     <div key={course._id} className="course-card-ui" onClick={() => navigate(`/course/${course._id}`)}>
                         <div className="course-thumb">
-                            <img src={`http://localhost:5000${course.thumbnail}`} alt={course.title} />
+                            <img src={`${import.meta.env.VITE_API_URL}${course.thumbnail}`} alt={course.title} />
                         </div>
                         <div className="course-details">
                             <span className="card-cat-tag">{course.category}</span>

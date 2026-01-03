@@ -22,14 +22,14 @@ const CourseDetail = () => {
         setIsEnrolled(false);
 
         const courseRes = await axios.get(
-          `http://localhost:5000/api/courses/${id}`
+          `${import.meta.env.VITE_API_URL}/api/courses/${id}`
         );
         setCourse(courseRes.data);
 
         if (user) {
           const token = await getToken();
           const userRes = await axios.get(
-            `http://localhost:5000/api/users/profile-status`,
+            `${import.meta.env.VITE_API_URL}/api/users/profile-status`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
 
@@ -64,7 +64,7 @@ const CourseDetail = () => {
       const token = await getToken();
 
       const orderRes = await axios.post(
-        "http://localhost:5000/api/payments/create-order",
+        `${import.meta.env.VITE_API_URL}/api/payments/create-order`,
         { courseId: course._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,7 +83,7 @@ const CourseDetail = () => {
             const freshToken = await getToken();
 
             await axios.post(
-              "http://localhost:5000/api/payments/verify",
+              `${import.meta.env.VITE_API_URL}/api/payments/verify`,
               {
                 ...response,
                 courseId: course._id,
@@ -152,17 +152,17 @@ const CourseDetail = () => {
                 <video
                   controls
                   className="preview-video"
-                  poster={`http://localhost:5000${course.thumbnail}`}
+                  poster={`${import.meta.env.VITE_API_URL}${course.thumbnail}`}
                 >
                   <source
-                    src={`http://localhost:5000${course.curriculum[0].lessons[0].contentUrl}`}
+                    src={`${import.meta.env.VITE_API_URL}${course.curriculum[0].lessons[0].contentUrl}`}
                     type="video/mp4"
                   />
                 </video>
               ) : (
                 <div className="preview-placeholder">
                   <img
-                    src={`http://localhost:5000${course.thumbnail}`}
+                    src={`${import.meta.env.VITE_API_URL}${course.thumbnail}`}
                     alt="Course Preview"
                   />
                   <div className="overlay">📘 Curriculum Preview Only</div>

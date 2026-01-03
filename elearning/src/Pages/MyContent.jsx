@@ -18,7 +18,7 @@ const MyContent = () => {
         // ✅ Retrieve the secure session token from Clerk
         const token = await getToken(); 
         
-        const res = await axios.get('http://localhost:5000/api/courses/instructor', {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/courses/instructor`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setCourses(res.data);
@@ -39,7 +39,7 @@ const MyContent = () => {
     if (window.confirm("Are you sure you want to delete this course? This action cannot be undone.")) {
       try {
         const token = await getToken(); // ✅ Fresh token for delete action
-        await axios.delete(`http://localhost:5000/api/courses/${courseId}`, {
+        await axios.delete(`${import.meta.env.VITE_API_URL}/api/courses/${courseId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setCourses(courses.filter(course => course._id !== courseId));
@@ -71,7 +71,7 @@ const MyContent = () => {
             <div key={course._id} className="course-card-horizontal">
               <div className="course-card-img">
                 {/* Use course.thumbnail directly from your backend storage path */}
-                <img src={`http://localhost:5000${course.thumbnail}`} alt={course.title} />
+                <img src={`${import.meta.env.VITE_API_URL}${course.thumbnail}`} alt={course.title} />
               </div>
               <div className="course-card-body">
                 <div className="card-header-flex">

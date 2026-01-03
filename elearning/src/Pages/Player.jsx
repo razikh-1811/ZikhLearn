@@ -19,7 +19,7 @@ const Player = () => {
     const fetchCourse = async () => {
       try {
         const token = await getToken();
-        const res = await axios.get(`http://localhost:5000/api/courses/${id}`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/courses/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setCourse(res.data);
@@ -43,7 +43,7 @@ const Player = () => {
   );
 
   const current = lessons[currentLessonIndex];
-  const fileUrl = current?.contentUrl ? `http://localhost:5000${current.contentUrl}` : "";
+  const fileUrl = current?.contentUrl ? `${import.meta.env.VITE_API_URL}${current.contentUrl}` : "";
   
   // ✅ IMPROVED DETECTION: Corrects the issue where PDFs load in video players
   const isPDF = current?.contentType?.toLowerCase() === "pdf" || 

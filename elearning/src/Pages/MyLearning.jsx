@@ -23,7 +23,7 @@ const MyLearning = () => {
 
         // 1. Fetch user progress
         const userRes = await axios.get(
-          "http://localhost:5000/api/users/profile-status",
+          `${import.meta.env.VITE_API_URL}/api/users/profile-status`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -32,7 +32,7 @@ const MyLearning = () => {
 
         // 2. Fetch enrolled courses
         const courseRes = await axios.get(
-          "http://localhost:5000/api/courses/enrolled",
+          `${import.meta.env.VITE_API_URL}/api/courses/enrolled`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -124,7 +124,7 @@ const MyLearning = () => {
                 >
                   <div className="card-image">
                     <img
-                      src={`http://localhost:5000${course.thumbnail}`}
+                      src={`${import.meta.env.VITE_API_URL}${course.thumbnail}`}
                       alt={course.title}
                       onError={(e) => {
                         e.target.src =

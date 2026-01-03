@@ -20,8 +20,8 @@ const AdminDashboard = () => {
         const token = await getToken();
 
         const [coursesRes, usersRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/courses"),
-          axios.get("http://localhost:5000/api/users/all", {
+          axios.get(`${import.meta.env.VITE_API_URL}/api/courses`),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/users/all`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -100,7 +100,7 @@ const AdminDashboard = () => {
                       onChange={async (e) => {
                         const token = await getToken();
                         await axios.put(
-                          `http://localhost:5000/api/users/admin/change-role/${u._id}`,
+                          `${import.meta.env.VITE_API_URL}/api/users/admin/change-role/${u._id}`,
                           { role: e.target.value },
                           { headers: { Authorization: `Bearer ${token}` } }
                         );
@@ -119,7 +119,7 @@ const AdminDashboard = () => {
                       onClick={async () => {
                         const token = await getToken();
                         await axios.put(
-                          `http://localhost:5000/api/users/admin/block/${u._id}`,
+                          `${import.meta.env.VITE_API_URL}/api/users/admin/block/${u._id}`,
                           {},
                           { headers: { Authorization: `Bearer ${token}` } }
                         );
@@ -157,7 +157,7 @@ const AdminDashboard = () => {
 
                     const token = await getToken();
                     await axios.delete(
-                      `http://localhost:5000/api/courses/admin/${c._id}`,
+                      `${import.meta.env.VITE_API_URL}/api/courses/admin/${c._id}`,
                       { headers: { Authorization: `Bearer ${token}` } }
                     );
                     window.location.reload();
