@@ -5,17 +5,17 @@ import React, { useState } from "react"; // ✅ Added useState here
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
-import Home from "./pages/Home.jsx";
-import CourseCatalog from "./pages/CourseCatalog.jsx";
-import CourseDetails from "./pages/CourseDetails.jsx";
-import MyLearning from "./pages/MyLearning.jsx";
-import Player from "./pages/Player.jsx";
-import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx";
-import FacultyDashboard from "./pages/FacultyDashboard.jsx";
-import CourseEditor from "./pages/CourseEditor.jsx";
-import SelectRole from "./pages/SelectRole.jsx";
-import AdminDashboard from "./pages/AdminDashboard.jsx"; 
+import Home from "./Pages/Home.jsx";
+import CourseCatalog from "./Pages/CourseCatalog.jsx";
+import CourseDetails from "./Pages/CourseDetails.jsx";
+import MyLearning from "./Pages/MyLearning.jsx";
+import Player from "./Pages/Player.jsx";
+import Login from "./Pages/Login.jsx";
+import Signup from "./Pages/Signup.jsx";
+import FacultyDashboard from "./Pages/FacultyDashboard.jsx";
+import CourseEditor from "./Pages/CourseEditor.jsx";
+import SelectRole from "./Pages/SelectRole.jsx";
+import AdminDashboard from "./Pages/AdminDashboard.jsx"; 
 
 import "./App.css";
 
