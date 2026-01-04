@@ -187,12 +187,53 @@
   .nav-brand-image { height: 42px; }
 }
 
+/* ===============================
+   RESPONSIVE DESIGN (FIXED)
+================================ */
+@media (max-width: 1024px) {
+  .navbar-container { padding: 0 20px; }
+  .nav-center { max-width: 400px; }
+  .nav-brand-image { height: 42px; }
+}
+
 @media (max-width: 768px) {
+  .navbar-container { 
+    padding: 0 10px; /* Give more side room */
+    height: 70px;    /* Slightly shorter for mobile */
+    gap: 5px;        /* Tighten space between elements */
+  }
+
   .nav-center { display: none; }
   .user-text-info { display: none; }
   .user-profile-display { border-left: none; padding-left: 0; }
-   
   
-  /* ✅ ONLY CHANGE: Reduced height for mobile screens */
-  .nav-brand-image { height: 28px; width:10px; } 
+  /* ✅ LOGO FIX: Fixed height/width to prevent squashing */
+  .nav-brand-image { 
+    height: 40px; 
+    width: 100px; 
+    object-fit: contain; 
+    margin: 0;
+  }
+
+  /* ✅ BUTTONS & LINKS: Smaller and tighter for mobile */
+  .nav-link {
+    font-size: 11px; /* Further reduced */
+    font-weight: 600;
+  }
+
+  .nav-auth-link {
+    font-size: 11px;
+    margin-right: 5px;
+  }
+
+  .signup-button {
+    padding: 6px 10px; /* Slimmer button */
+    font-size: 11px;
+    border-radius: 2px;
+  }
+
+  /* Ensure the right section doesn't push too far */
+  .nav-right {
+    gap: 8px;
+  }
 }
