@@ -327,7 +327,7 @@ textarea:focus {
 
 
 /* =====================================================
-   RESPONSIVE (OPTIMIZED)
+   RESPONSIVE (OPTIMIZED FOR MOBILE NAVIGATION)
 ===================================================== */
 
 /* Tablet Optimization */
@@ -338,14 +338,14 @@ textarea:focus {
   }
 
   .sidebar-brand, 
-  .nav-item span { /* Assumes text is in a span */
+  .nav-item span { 
     display: none; 
   }
 
   .nav-item {
     text-align: center;
     padding: 14px;
-    font-size: 20px; /* Larger icons for touch */
+    font-size: 20px;
   }
 
   .dashboard-content {
@@ -359,21 +359,25 @@ textarea:focus {
     flex-direction: column;
   }
 
+  /* ✅ FIX: Bottom Navigation Bar Styling */
   .dashboard-sidebar {
     width: 100%;
     min-height: auto;
-    height: 60px;
+    height: 65px; /* Standard bottom bar height */
     flex-direction: row;
-    position: fixed; /* Stick to bottom for mobile UX */
+    position: fixed; 
     bottom: 0;
     top: auto;
     padding: 0;
+    background: #1c1d1f; /* Solid dark background for contrast */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
     z-index: 3000;
   }
 
   .sidebar-nav {
     flex-direction: row;
     width: 100%;
+    height: 100%;
     justify-content: space-around;
     gap: 0;
   }
@@ -382,13 +386,36 @@ textarea:focus {
     border-radius: 0;
     flex: 1;
     display: flex;
+    flex-direction: column; /* Stack icon above text */
+    align-items: center;
     justify-content: center;
-    padding: 15px 0;
+    padding: 5px 0;
+    gap: 2px;
+  }
+
+  /* ✅ FIX: Labels size to prevent overlap */
+  .nav-item span {
+    display: block; /* Ensure labels show on mobile */
+    font-size: 10px; /* Small font to fit all 4 items */
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .nav-item i, .nav-item svg {
+    font-size: 20px; /* Clear icons for tapping */
+  }
+
+  /* Refined Active State for bottom bar */
+  .nav-item.active {
+    background: transparent;
+    color: #a435f0;
+    box-shadow: none;
+    border-top: 3px solid #a435f0; /* Visual indicator line */
   }
 
   .dashboard-content {
     padding: 20px 15px;
-    margin-bottom: 70px; /* Space for the bottom sidebar */
+    margin-bottom: 75px; /* Clear space for fixed bottom bar */
   }
 
   .content-header {
@@ -397,13 +424,13 @@ textarea:focus {
     gap: 15px;
   }
 
-  /* 🔥 GRID FIXES: Stack elements on mobile */
+  /* 🔥 GRID & CARD FIXES */
   .form-grid {
-    grid-template-columns: 1fr; /* Stack inputs */
+    grid-template-columns: 1fr; 
   }
 
   .lesson-item {
-    grid-template-columns: 1fr; /* Stack lesson title and file upload */
+    grid-template-columns: 1fr; 
     gap: 15px;
   }
 
