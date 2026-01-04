@@ -11,7 +11,7 @@ import CourseDetails from "./Pages/CourseDetails.jsx";
 import MyLearning from "./Pages/MyLearning.jsx";
 import Player from "./Pages/Player.jsx";
 import Login from "./Pages/Login.jsx";
-import Signup from "./Pages/signup.jsx";
+import Signup from "./Pages/Signup.jsx";
 import FacultyDashboard from "./Pages/FacultyDashboard.jsx";
 import CourseEditor from "./Pages/CourseEditor.jsx";
 import SelectRole from "./Pages/SelectRole.jsx";
