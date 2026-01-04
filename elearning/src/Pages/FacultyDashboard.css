@@ -325,19 +325,35 @@ textarea:focus {
   }
 }
 
+
 /* =====================================================
-   RESPONSIVE
+   RESPONSIVE (OPTIMIZED)
 ===================================================== */
+
+/* Tablet Optimization */
 @media (max-width: 1024px) {
   .dashboard-sidebar {
-    width: 80px;
+    width: 85px;
+    padding: 20px 10px;
   }
 
-  .sidebar-brand {
-    display: none;
+  .sidebar-brand, 
+  .nav-item span { /* Assumes text is in a span */
+    display: none; 
+  }
+
+  .nav-item {
+    text-align: center;
+    padding: 14px;
+    font-size: 20px; /* Larger icons for touch */
+  }
+
+  .dashboard-content {
+    padding: 30px;
   }
 }
 
+/* Mobile & Small Tablet Optimization */
 @media (max-width: 768px) {
   .dashboard-wrapper {
     flex-direction: column;
@@ -345,13 +361,79 @@ textarea:focus {
 
   .dashboard-sidebar {
     width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
     min-height: auto;
+    height: 60px;
+    flex-direction: row;
+    position: fixed; /* Stick to bottom for mobile UX */
+    bottom: 0;
+    top: auto;
+    padding: 0;
+    z-index: 3000;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .nav-item {
+    border-radius: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
   }
 
   .dashboard-content {
-    padding: 24px;
+    padding: 20px 15px;
+    margin-bottom: 70px; /* Space for the bottom sidebar */
+  }
+
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  /* 🔥 GRID FIXES: Stack elements on mobile */
+  .form-grid {
+    grid-template-columns: 1fr; /* Stack inputs */
+  }
+
+  .lesson-item {
+    grid-template-columns: 1fr; /* Stack lesson title and file upload */
+    gap: 15px;
+  }
+
+  .admin-card {
+    padding: 20px;
+  }
+
+  .chapter-head {
+    flex-direction: column;
+  }
+
+  .lesson-file-row {
+    flex-direction: column;
+  }
+
+  .content-header h1 {
+    font-size: 24px;
   }
 }
 
+/* Extra Small Phones */
+@media (max-width: 480px) {
+  .card-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .publish-btn-main {
+    width: 100%;
+    padding: 12px;
+  }
+}
