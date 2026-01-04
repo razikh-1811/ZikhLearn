@@ -144,29 +144,81 @@
 }
 
 /* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .admin-analytics-page {
-    padding: 20px;
+    padding: 16px; /* Slightly tighter padding for mobile */
+  }
+
+  .admin-analytics-page h1 {
+    font-size: 22px; /* Smaller heading for mobile */
+    margin-bottom: 20px;
   }
 
   .stats-grid {
+    grid-template-columns: 1fr; /* Stack cards on top of each other */
     gap: 16px;
   }
 
-  .stat-card p {
-    font-size: 26px;
-  }
-
-  .top-courses {
+  .stat-card {
     padding: 20px;
   }
 
-  .top-courses table {
-    font-size: 14px;
+  .stat-card p {
+    font-size: 24px; /* Adjust font size for better fit */
   }
 
-  /* Scrollable table on mobile */
   .top-courses {
-    overflow-x: auto;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .top-courses h2 {
+    font-size: 18px;
+  }
+
+  /* --- TABLE TO CARDS (Optional but recommended for mobile) --- */
+  /* If you want to keep the table as a scrolling block, your current 
+     overflow-x: auto is sufficient. If you want it easier to read,
+     use this "stacking" method: */
+
+  .top-courses table, 
+  .top-courses thead, 
+  .top-courses tbody, 
+  .top-courses th, 
+  .top-courses td, 
+  .top-courses tr { 
+    display: block; /* Break table structure into blocks */
+  }
+
+  .top-courses thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px; /* Hide headers visually but keep for screen readers */
+  }
+
+  .top-courses tr {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .top-courses td { 
+    border: none;
+    position: relative;
+    padding-left: 50% !important; /* Move data to the right */
+    text-align: left !important;
+    white-space: normal;
+  }
+
+  .top-courses td:before { 
+    position: absolute;
+    left: 10px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    font-weight: 700;
+    color: #6a6f73;
+    content: attr(data-label); /* Requires adding data-label to your HTML <td> */
   }
 }
