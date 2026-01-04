@@ -173,31 +173,93 @@
 }
 
 /* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
+  .admin-page {
+    padding: 30px 20px;
+  }
+
   .admin-tabs {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows tabs to wrap into multiple rows if needed */
+    gap: 8px;
   }
 
   .admin-course-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  /* Make table scrollable horizontally to prevent breaking the layout */
+  .admin-section {
+    overflow-x: auto;
   }
 }
 
 @media (max-width: 600px) {
   .admin-page {
-    padding: 20px 14px;
+    padding: 20px 12px;
   }
 
-  .admin-table th,
-  .admin-table td {
-    font-size: 12px;
-    padding: 8px;
+  .admin-page h1 {
+    font-size: 22px;
+  }
+
+  .admin-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two buttons per row for easier tapping */
   }
 
   .admin-tabs button {
     font-size: 13px;
-    padding: 8px 14px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px; /* Square off slightly for grid look */
+  }
+
+  /* --- MOBILE TABLE TRANSFORMATION --- */
+  /* This turns the table into individual cards for each user */
+  .admin-table, 
+  .admin-table thead, 
+  .admin-table tbody, 
+  .admin-table th, 
+  .admin-table td, 
+  .admin-table tr { 
+    display: block; 
+  }
+
+  .admin-table thead {
+    display: none; /* Hide headers visually on tiny screens */
+  }
+
+  .admin-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .admin-table td {
+    text-align: right; /* Align value to the right */
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px solid #f9f9f9;
+  }
+
+  .admin-table td::before {
+    content: attr(data-label); /* Shows 'Name', 'Email', etc. */
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
+    color: #6a6f73;
+  }
+
+  .admin-table td:last-child {
+    border-bottom: none;
+    text-align: center; /* Center action buttons */
+    padding-left: 12px;
   }
 }
