@@ -178,28 +178,68 @@
 }
 
 /* =====================================================
-   RESPONSIVE
+   RESPONSIVE DESIGN (ANALYTICS)
 ===================================================== */
 @media (max-width: 768px) {
   .analytics-container {
-    padding: 20px;
+    padding: 16px; /* Tighter padding for mobile screens */
   }
 
   .page-header h1 {
-    font-size: 24px;
+    font-size: 22px; /* Smaller heading to prevent text wrapping */
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr; /* Stack stat boxes vertically */
+    gap: 16px;
   }
 
   .stat-box {
-    padding: 20px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .stat-icon {
+    width: 48px; /* Slightly smaller icons for mobile */
+    height: 48px;
+    font-size: 20px;
   }
 
   .stat-info h3 {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  /* 🔥 TABLE RESPONSIVENESS: Horizontal Scrolling */
+  .course-revenue-section {
+    padding: 16px;
+    overflow-x: auto; /* Allow horizontal scroll for the table */
+  }
+
+  .course-revenue-table {
+    min-width: 500px; /* Ensures table columns don't squash */
   }
 
   .course-revenue-table th,
   .course-revenue-table td {
-    padding: 12px;
-    font-size: 13px;
+    padding: 10px;
+    font-size: 12px;
   }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 20px;
+  }
+  
+  /* Stack Table to Cards (Optional alternative to horizontal scroll) */
+  /* If you prefer cards over scrolling, uncomment the block below */
+  /*
+  .course-revenue-table, .course-revenue-table thead, .course-revenue-table tbody, .course-revenue-table th, .course-revenue-table td, .course-revenue-table tr { 
+    display: block; 
+  }
+  .course-revenue-table thead { display: none; }
+  .course-revenue-table tr { margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 8px; }
+  .course-revenue-table td { text-align: right; padding-left: 50%; position: relative; }
+  .course-revenue-table td::before { content: attr(data-label); position: absolute; left: 10px; font-weight: bold; }
+  */
 }
