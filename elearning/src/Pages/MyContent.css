@@ -121,3 +121,76 @@
     cursor: pointer;
     margin-top: 15px;
 }
+/* =====================================================
+   RESPONSIVE DESIGN (MY CONTENT)
+===================================================== */
+
+@media (max-width: 900px) {
+    .my-content-container {
+        padding: 15px;
+    }
+
+    /* Reduce image size for smaller tablets */
+    .course-card-img {
+        width: 160px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 20px;
+    }
+
+    /* 🔥 STACKING: Transform horizontal card to vertical card */
+    .course-card-horizontal {
+        flex-direction: column;
+        max-width: 400px; /* Prevent cards from being too wide on mobile */
+        margin: 0 auto 20px auto;
+    }
+
+    .course-card-img {
+        width: 100%; /* Image takes full width */
+        height: 180px;
+    }
+
+    .course-card-body {
+        padding: 15px;
+    }
+
+    .card-header-flex {
+        flex-direction: column; /* Stack title and price badge */
+        gap: 8px;
+    }
+
+    .course-title {
+        font-size: 16px;
+    }
+
+    .card-actions {
+        flex-direction: column; /* Stack buttons for easier tapping */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .manage-btn, .create-now-btn {
+        width: 100%; /* Full width buttons for mobile */
+        padding: 12px;
+    }
+
+    .del-btn-text {
+        text-align: center;
+        padding: 8px;
+    }
+}
+
+/* Very Small Devices */
+@media (max-width: 480px) {
+    .empty-state {
+        padding: 40px 15px;
+    }
+    
+    .price-badge {
+        font-size: 12px;
+    }
+}
