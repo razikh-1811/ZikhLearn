@@ -15,7 +15,7 @@ app.use(express.json());
 // This allows both your local testing and your future Netlify site
 const allowedOrigins = [
   "http://localhost:5173", 
-  "https://your-site-name.netlify.app" // ✅ REPLACE THIS with your Netlify URL once you have it
+  "https://zikhlearn.netlify.app" // ✅ REPLACE THIS with your Netlify URL once you have it
 ];
 
 app.use(
