@@ -193,5 +193,5 @@
   .user-profile-display { border-left: none; padding-left: 0; }
   
   /* ✅ ONLY CHANGE: Reduced height for mobile screens */
-  .nav-brand-image { height: 20px; width:50px; } 
+  .nav-brand-image { height: 80px; width:40px; } 
 }
