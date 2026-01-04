@@ -243,3 +243,91 @@
 .curriculum-footer {
   margin-top: 20px;
 }
+/* ===============================
+   RESPONSIVE DESIGN (EDITOR)
+================================ */
+
+@media (max-width: 900px) {
+  .editor-top-nav {
+    padding: 16px 20px;
+    margin: 10px auto;
+  }
+
+  .editor-container-main {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 🔥 TOP BAR: Stack navigation items */
+  .editor-top-nav {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .editor-top-nav h2 {
+    font-size: 16px;
+  }
+
+  /* 🔥 INPUTS: Change from side-by-side to stacked */
+  .input-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .editor-section {
+    padding: 20px;
+  }
+
+  /* 🔥 CHAPTER & LESSONS: Improve spacing for touch targets */
+  .chapter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .chapter-title-edit {
+    width: 100%; /* Take full width on mobile */
+    font-size: 16px;
+  }
+
+  .lesson-row-top {
+    flex-direction: column; /* Stack lesson title and delete button */
+  }
+
+  .del-btn-sm {
+    padding: 10px; /* Larger tap area for mobile */
+    text-align: center;
+  }
+
+  /* 🔥 FILE UPLOAD: Stack file input and status */
+  .file-upload-zone {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .file-upload-zone input {
+    width: 100%;
+  }
+
+  /* Final Action Buttons */
+  .save-btn-primary {
+    width: 100%; /* Full width button for easier thumb access */
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .editor-section h3 {
+    font-size: 16px;
+  }
+
+  .back-link {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+}
