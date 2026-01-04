@@ -191,6 +191,7 @@
   .nav-center { display: none; }
   .user-text-info { display: none; }
   .user-profile-display { border-left: none; padding-left: 0; }
+   .signup-button{ padding: 7px 15px;height:30px;width:40px;}
   
   /* ✅ ONLY CHANGE: Reduced height for mobile screens */
   .nav-brand-image { height: 80px; width:40px; } 
