@@ -73,7 +73,8 @@ const FacultyDashboard = () => {
 
     try {
       // ✅ Retrieve the secure Clerk Token for the backend middleware
-      const token = await getToken(); 
+     const token = await getToken({ template: "backend" });
+ 
       
       const formData = new FormData();
       formData.append('title', courseData.title.trim());
