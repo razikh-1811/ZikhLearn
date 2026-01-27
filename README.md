@@ -3,10 +3,10 @@ ZikhLearn is a full-stack e-learning platform designed to connect faculty and st
 
 ZikhLearn is a full-stack, premium E-learning platform designed to bridge the gap in specialized technical education for Engineering, Science, and Mathematics. Built with the MERN stack, the platform features a custom-built learning management system (LMS) with distinct portals for Students, Faculty, and Administrators. Key features include an integrated video/document lesson player, real-time course search and filtering, and a secure role-based authentication system powered by Clerk. Unlike generic platforms, ZikhLearn focuses on high-fidelity technical content delivery with a modern, responsive UI designed for deep focus.
 
-🚀** Features**
+** Features**
 
 
-👨‍🏫 Faculty Features
+**Faculty Features**
 
 Create and manage courses
 
@@ -18,7 +18,7 @@ View analytics dashboard
 
 Instructor profile & course insights
 
-🎓 Student Features
+ **Student Features**
 
 Enroll in courses
 
@@ -30,7 +30,7 @@ Track course progress visually
 
 Personal learning dashboard
 
-🔐 Authentication & Security
+**Authentication & Security**
 
 Secure authentication using Clerk
 
@@ -38,7 +38,7 @@ Role-based access (Student / Faculty)
 
 Protected routes & APIs
 
-**🛠️ Tech Stack**
+**Tech Stack**
 Frontend
 
 React.js
@@ -81,7 +81,7 @@ Clerk (JWT-based authentication)
 │
 └── README.md
 
-⚙️ Installation & Setup
+**Installation & Setup**
 1️⃣ Clone the Repository
 git clone https://github.com/USERNAME/REPO_NAME.git
 cd REPO_NAME
@@ -102,7 +102,7 @@ cd frontend
 npm install
 npm start
 
-🌐 Application Flow
+**Application Flow**
 
 User signs up / logs in via Clerk
 
@@ -116,7 +116,7 @@ Progress is tracked automatically
 
 Faculty views analytics dashboard
 
-🎯 Key Highlights
+**Key Highlights**
 
 Clean & modern UI (SaaS-style)
 
@@ -130,27 +130,25 @@ Production-ready structure
 
 Scalable backend architecture
 
-🔮 Future Enhancements
+ Future Enhancements
 
-⭐ Course ratings & reviews
+ Course ratings & reviews
 
-🧠 Quizzes & assignments
+ Quizzes & assignments
 
-📜 Certificates on completion
+ Certificates on completion
 
-💳 Payment gateway integration
+ Payment gateway integration
 
-🌙 Dark mode
+ Mobile app version
 
-📱 Mobile app version
-
-🤝 Contributing
+Contributing
 
 Contributions are welcome!
 Feel free to fork this repository and submit a pull request.
 
 
-👤 Author
+ Author
 
 Shaik Mahaboob Razikh
 
