@@ -21,7 +21,8 @@ const Hero = () => {
             </div>
             <div className="hero-visual-right">
                 <div className="hero-abstract-bg">
-                    {/* You can place a professional SVG or Image here */}
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&auto=format&fit=crop
+"/>
                     <div className="floating-stat-card">
                         <strong>4.9/5</strong>
                         <span>Average Course Rating</span>
