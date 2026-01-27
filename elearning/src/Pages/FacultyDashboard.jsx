@@ -105,7 +105,7 @@ const FacultyDashboard = () => {
         {
           headers: {
             Authorization: `Bearer ${token}`, // ✅ Passes Clerk token to backend
-            'Content-Type': 'multipart/form-data'
+            
           }
         }
       );
