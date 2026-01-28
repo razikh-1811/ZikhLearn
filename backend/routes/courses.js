@@ -163,7 +163,7 @@ router.post("/upload", protect, courseUploadFields, async (req, res) => {
 /* =====================================================
    FACULTY UPDATE COURSE
 ===================================================== */
-router.put("/courses/:id", protect, courseUploadFields, async (req, res) => {
+router.put("/:id", protect, courseUploadFields, async (req, res) => {
   try {
     const faculty = await User.findOne({ clerkId: req.user.id });
     if (!faculty || faculty.role !== "faculty") {
