@@ -247,25 +247,29 @@ router.get("/instructor/stats", protect, async (req, res) => {
     const studentSet = new Set();
     const courseMap = {};
 
-    payments.forEach((p) => {
-      totalRevenue += p.amount;
-      studentSet.add(p.userId.toString());
+   payments.forEach((p) => {
+  // 🔥 SAFETY CHECK (THIS IS THE FIX)
+  if (!p.courseId) return;
 
-      const courseId = p.courseId._id.toString();
+  totalRevenue += p.amount;
+  studentSet.add(p.userId.toString());
 
-      if (!courseMap[courseId]) {
-        courseMap[courseId] = {
-          courseId,
-          title: p.courseId.title,
-          price: p.amount,
-          students: 0,
-          revenue: 0,
-        };
-      }
+  const courseId = p.courseId._id.toString();
 
-      courseMap[courseId].students += 1;
-      courseMap[courseId].revenue += p.amount;
-    });
+  if (!courseMap[courseId]) {
+    courseMap[courseId] = {
+      courseId,
+      title: p.courseId.title,
+      price: p.amount,
+      students: 0,
+      revenue: 0,
+    };
+  }
+
+  courseMap[courseId].students += 1;
+  courseMap[courseId].revenue += p.amount;
+});
+
 
     res.json({
       students: studentSet.size,
