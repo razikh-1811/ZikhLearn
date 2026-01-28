@@ -15,7 +15,7 @@ const CourseEditor = () => {
     useEffect(() => {
         const fetchCourse = async () => {
             try {
-                const token = await getToken(); // ✅ Use Clerk Token
+                const token = await getToken({template:"backend"}); // ✅ Use Clerk Token
                 const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/courses/${courseId}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
@@ -72,7 +72,7 @@ const CourseEditor = () => {
     const handleSave = async () => {
         try {
             setSaving(true);
-            const token = await getToken(); // ✅ Get fresh Clerk Token for saving
+            const token = await getToken({template:"backend"}); // ✅ Get fresh Clerk Token for saving
             const formData = new FormData();
             formData.append('title', course.title);
             formData.append('description', course.description);
@@ -96,8 +96,8 @@ const CourseEditor = () => {
 
             await axios.put(`${import.meta.env.VITE_API_URL}/api/courses/${courseId}`, formData, {
                 headers: { 
-                    Authorization: `Bearer ${token}`, 
-                    'Content-Type': 'multipart/form-data' 
+                    Authorization: `Bearer ${token}`
+                     
                 }
             });
             alert("Full course updated successfully!");
